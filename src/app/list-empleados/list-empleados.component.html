@@ -8,6 +8,7 @@
       <th>Nombre</th>
       <th>Apellido</th>
       <th>Email</th>
+      <th>Acciones</th>
     </tr>
   </thead>
 
@@ -17,6 +18,10 @@
       <th>{{empleado.nombre}}</th>
       <th>{{empleado.apellido}}</th>
       <th>{{empleado.email}}</th>
+      <td>
+        <button (click)="actualizarEmpleado(empleado.id)" class="btn btn-info">Editar</button>
+        <button (click)="EliminarEmpleado(empleado.id)" class="btn btn-warning" style="margin-left:10px ;">Eliminar</button>
+      </td>
     </tr>
   </tbody>
 

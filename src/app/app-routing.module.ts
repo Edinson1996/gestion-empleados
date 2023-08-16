@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule,Routes } from '@angular/router';
 import { ListEmpleadosComponent } from './list-empleados/list-empleados.component';
+import { RegistrarEmpleadoComponent } from './registrar-empleado/registrar-empleado.component';
+import { ActualizarEmpleadoComponent } from './actualizar-empleado/actualizar-empleado.component';
 
 const routes : Routes=[
   {path:'empleados',component:ListEmpleadosComponent},
   {path:'',redirectTo:'empleados',pathMatch:'full'},
+  {path:'registrar-empleado',component:RegistrarEmpleadoComponent},
+  {path:'actualizar-empleado',component:ActualizarEmpleadoComponent},
 
 ]
 

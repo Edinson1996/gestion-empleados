@@ -14,8 +14,28 @@ export class EmpleadoService {
   ) { }
 
   //este metodo nos sirve para obtener los empleados
-  getListEmployees():Observable<Empleado[]>{
+  getListEmployees(): Observable<Empleado[]> {
     return this.httpClient.get<Empleado[]>(`${this.baseUrl}`);
+
+  }
+  //este metodo nos sirve para Registrar un empleados
+  registerEmployees(empleado: Empleado): Observable<Object> {
+    return this.httpClient.post(`${this.baseUrl}`, empleado);
+
+  }
+  //Este metodo sirve para actualizar el empleado
+  actualizarEmpleado(idEmpleado: number, empleado: Empleado): Observable<Object> {
+    return this.httpClient.put(`${this.baseUrl}/${idEmpleado}`, empleado)
+  }
+
+  //Obtener empleado por ID
+  obtenerEmpleadoPorID(empleadoId: number): Observable<Empleado> {
+
+    return this.httpClient.get<Empleado>(`${this.baseUrl}/${empleadoId}`);
+
+  }
+  eliminarEmpleado(empleadoId:number):Observable<Object>{
+    return this.httpClient.delete<Empleado>(`${this.baseUrl}/${empleadoId}`)
 
   }
 }
